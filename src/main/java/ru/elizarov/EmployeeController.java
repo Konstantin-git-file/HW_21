@@ -19,4 +19,11 @@ public class EmployeeController {
         return "employees";
     }
 
+    @GetMapping("/employee/{id}")
+    public String getEmployeeById(@PathVariable Long id, Model model) {
+        Employee employee = repository.findById(id).orElse(null);
+        model.addAttribute("employee", employee);
+        return "employee";
+    }
+
 }
