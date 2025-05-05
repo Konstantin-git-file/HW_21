@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import ru.elizarov.EmployeeRepository;
 
 @Controller
@@ -17,4 +18,5 @@ public class EmployeeController {
         model.addAttribute("employees", repository.findAll());
         return "employees";
     }
+
 }
